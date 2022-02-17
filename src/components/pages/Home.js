@@ -1,7 +1,6 @@
 import React from "react";
 import Logo from "../../resources/images/kitchen-logo.webp";
-import {useNavigate} from "react-router-dom";
-import LinkButton from "../LinkButton";
+import LinkElement from "../LinkElement";
 
 const Home = () => {
     return (
@@ -9,7 +8,9 @@ const Home = () => {
             <img className="site-logo" src={Logo} alt="site-logo"/>
             <header className="site-title">Kitchen Inventory Manager</header>
 
-            <LinkButton className={"get-started"} link={"dashboard"}>Get Started</LinkButton>
+            <LinkElement link={"dashboard"}>
+                <button className={"get-started"}>Get Started</button>
+            </LinkElement>
         </div>
     )
 };
