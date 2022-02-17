@@ -1,0 +1,17 @@
+:root
+{
+    --background-color: var(--color-black);
+    --background-color-2: var(--color-light-grey);
+
+    --text-color: var(--color-black);
+    --text-color-2: var(--color-white);
+
+    --color-black: #1d1d1d;
+    --color-white: white;
+    --color-light-grey: #d3d3d3;
+
+    --font-small: 1rem;
+    --font-medium: 1.5625rem;
+    --font-large: 1.875rem;
+    --font-raleway: 'Raleway', sans-serif;
+}
