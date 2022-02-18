@@ -2,7 +2,7 @@ import React from "react";
 
 const LinkElement = ({link, className, children}) => {
     let navigateTo = (url) => {
-        document.location.href += url;
+        document.location.href = url;
     };
 
     return (
