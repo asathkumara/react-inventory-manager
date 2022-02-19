@@ -6,6 +6,7 @@ import registerFoodIcon from "../../resources/images/food-icon-white.webp";
 import searchFoodIcon from "../../resources/images/magnifier-icon-white.webp";
 import addIcon from "../../resources/images/plus-white.webp";
 import ellipses from "../../resources/images/ellipses.webp";
+
 const Zones = () => {
     return (
         <div>

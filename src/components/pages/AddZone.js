@@ -1,22 +1,35 @@
-import React from "react";
+import React, {useState} from "react";
 import LinkElement from "../LinkElement";
 import dashboardIcon from "../../resources/images/dashboard-icon-white-active.webp";
 import zoneIcon from "../../resources/images/zone-icon-white-active.webp";
 import registerFoodIcon from "../../resources/images/food-icon-white.webp";
 import searchFoodIcon from "../../resources/images/magnifier-icon-white.webp";
-import {CirclePicker, CompactPicker} from "react-color";
+import {ChromePicker} from "react-color";
 
 const AddZone = () => {
+
+    const [color, setColor] = useState({hex: "#ffffff"});
+    const [zoneName, setZoneName] = useState("");
+
     return (
         <div>
             <header className="dashboard-header">Add Zone</header>
             <section className="zone-menu">
                 <article className="zone-name">
-                    <input className="zone-name-input" placeholder="Enter Zone Name" type="text"/>
+                    <input className="zone-name-input"
+                           placeholder="Enter Zone Name"
+                           type="text"
+                           onChange={(event) => setZoneName(event.target.value)}
+                    />
                 </article>
-                <article className="color-input">
-                    <h2 className="color-input-label">Pick Zone Color</h2>
-                    <CirclePicker circleSize={40}/>
+                <article className="option">
+                    <h2 className="option-label">Pick Zone Color</h2>
+                    <ChromePicker color={color} onChangeComplete={(color) => setColor(color)}/>
+                </article>
+
+                <article className="option">
+                    <h2 className="option-label">Preview Zone</h2>
+                    <div className="preview-zone" style={{backgroundColor: color.hex}}>{zoneName}</div>
                 </article>
 
                 <LinkElement>
