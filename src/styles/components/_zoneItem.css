@@ -1,0 +1,28 @@
+.zone-item
+{
+    padding: 20px;
+    border-bottom: 2px solid var(--color-black);
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.zone-item-name
+{
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+.zone-item-options
+{
+    width: 31px;
+    height: 31px;
+
+    transition: transform 0.02s;
+}
+
+.zone-item-options:hover
+{
+    transform: scale(1.2);
+    cursor: pointer;
+}

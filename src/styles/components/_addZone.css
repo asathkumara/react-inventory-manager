@@ -1,0 +1,51 @@
+.zone-name-input
+{
+    width: 100%;
+    height: 123px;
+    border: none;
+    background-color: var(--color-light-grey-2);
+
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: var(--font-raleway);
+}
+
+.color-input
+{
+    padding: 10px;
+    width: 100%;
+    border-bottom: 2px solid var(--color-black);
+}
+
+.circle-picker
+{
+
+    min-width: 500px !important;
+    margin: 10px auto !important;
+}
+
+.save-zone-button
+{
+    background-color: var(--color-dark-red);
+    color: var(--text-color-2);
+    width: 67px;
+    height: 37px;
+
+    font-size: 15px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 25px;
+    
+    transition: ease transform 0.2s;
+
+    position: absolute;
+    top: 92%;
+    left: 95%;
+}
+
+.save-zone-button:hover
+{
+    cursor: pointer;
+    transform: scale(1.2);
+}

@@ -4,29 +4,26 @@ import dashboardIcon from "../../resources/images/dashboard-icon-white-active.we
 import zoneIcon from "../../resources/images/zone-icon-white-active.webp";
 import registerFoodIcon from "../../resources/images/food-icon-white.webp";
 import searchFoodIcon from "../../resources/images/magnifier-icon-white.webp";
-import addIcon from "../../resources/images/plus-white.webp";
-import ellipses from "../../resources/images/ellipses.webp";
-const Zones = () => {
+import {CirclePicker, CompactPicker} from "react-color";
+
+const AddZone = () => {
     return (
         <div>
-            <header className="dashboard-header">Zones</header>
+            <header className="dashboard-header">Add Zone</header>
             <section className="zone-menu">
-                <LinkElement link="/dashboard/zones/add">
-                    <button className="add-zone-button">
-                        <img className="add-zone-icon" src={addIcon} alt=""/>
-                    </button>
+                <article className="zone-name">
+                    <input className="zone-name-input" placeholder="Enter Zone Name" type="text"/>
+                </article>
+                <article className="color-input">
+                    <h2 className="color-input-label">Pick Zone Color</h2>
+                    <CirclePicker circleSize={40}/>
+                </article>
+
+                <LinkElement>
+                    <button className="save-zone-button">Save</button>
                 </LinkElement>
-
-                <article className="zone-item">
-                    <p className="zone-item-name">Left Cabinet</p>
-                    <img className="zone-item-options" src={ellipses} alt=""/>
-                </article>
-
-                <article className="zone-item">
-                    <p className="zone-item-name">Pantry - Top Shelf</p>
-                    <img className="zone-item-options" src={ellipses} alt=""/>
-                </article>
             </section>
+
 
             <footer className="site-footer">
                 <LinkElement link="/dashboard">
@@ -46,4 +43,4 @@ const Zones = () => {
     );
 };
 
-export default Zones;
+export default AddZone;

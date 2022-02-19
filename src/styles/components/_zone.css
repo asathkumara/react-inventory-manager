@@ -1,0 +1,35 @@
+.zone-menu
+{
+    border-style:solid none none;
+    border-top: 16px solid var(--color-dark-grey);
+
+    position: relative;
+    min-height: 100vh;
+}
+
+.add-zone-button
+{
+    background-color: var(--color-black);
+    border-radius: 50px;
+
+    width: 51px;
+    height: 44px;
+    padding: 5px;
+
+    position: absolute;
+    top: 92%;
+    left: 95%;
+    transition: ease-in transform .02s;
+}
+
+.add-zone-button:hover
+{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.add-zone-icon
+{
+    width: 30px;
+    height: 30px;
+}
