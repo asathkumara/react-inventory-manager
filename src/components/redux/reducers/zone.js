@@ -7,6 +7,12 @@ const addZoneAction = (state, action) =>
     state.value.push(action.payload);
 };
 
+const removeZoneAction = (state, action) =>
+{
+    state.value = state.value.filter((zone) => zone.zoneID !== action.payload.zoneID);
+};
+
+
 const zoneSlice = createSlice({
     name: "zones",
     initialState: {
@@ -16,9 +22,10 @@ const zoneSlice = createSlice({
         ]
     },
     reducers: {
-        addZone: (state, action) => addZoneAction(state, action)
+        addZone: (state, action) => addZoneAction(state, action),
+        removeZone: (state, action) => removeZoneAction(state, action)
     }
 });
 
-export const { addZone } = zoneSlice.actions;
+export const { addZone, removeZone} = zoneSlice.actions;
 export default zoneSlice.reducer;

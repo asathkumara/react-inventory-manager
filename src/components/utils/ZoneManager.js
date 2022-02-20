@@ -10,7 +10,7 @@ const ZoneManager = () => {
         <div>
             {console.table(zoneList)}
             {zoneList.map((zone) => {
-                return <ZoneItem key={zone.zoneID} zoneName={zone.zoneName} zoneColor={zone.zoneColor}/>
+                return <ZoneItem key={zone.zoneID} zoneID={zone.zoneID} zoneName={zone.zoneName} zoneColor={zone.zoneColor}/>
             })}
         </div>
     )
