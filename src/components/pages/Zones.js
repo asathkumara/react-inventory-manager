@@ -6,11 +6,9 @@ import registerFoodIcon from "../../resources/images/food-icon-white.webp";
 import searchFoodIcon from "../../resources/images/magnifier-icon-white.webp";
 import addIcon from "../../resources/images/plus-white.webp";
 import ZoneManager from "../utils/ZoneManager";
-import {useSelector} from "react-redux";
 
 const Zones = () => {
 
-    const zoneList = useSelector((state) => state.zones.value);
 
     return (
         <div>
@@ -22,7 +20,7 @@ const Zones = () => {
                     </button>
                 </LinkElement>
 
-              <ZoneManager zoneList={zoneList}/>
+              <ZoneManager/>
             </section>
 
             <footer className="site-footer">

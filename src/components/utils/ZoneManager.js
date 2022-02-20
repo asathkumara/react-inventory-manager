@@ -2,7 +2,9 @@ import React from "react";
 import {useSelector} from "react-redux";
 import ZoneItem from "./ZoneItem";
 
-const ZoneManager = ({zoneList}) => {
+const ZoneManager = () => {
+
+    const zoneList = useSelector((state) => state.zones.value);
 
     return (
         <div>
