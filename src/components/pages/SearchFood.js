@@ -1,5 +1,5 @@
 import React from "react";
-import LinkElement from "../LinkElement";
+import LinkElement from "../utils/LinkElement";
 import dashboardIcon from "../../resources/images/dashboard-icon-white-active.webp";
 import zoneIcon from "../../resources/images/zone-icon-white.webp";
 import registerFoodIcon from "../../resources/images/food-icon-white.webp";

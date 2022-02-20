@@ -1,13 +1,17 @@
 import React from "react";
-import LinkElement from "../LinkElement";
+import LinkElement from "../utils/LinkElement";
 import dashboardIcon from "../../resources/images/dashboard-icon-white-active.webp";
 import zoneIcon from "../../resources/images/zone-icon-white-active.webp";
 import registerFoodIcon from "../../resources/images/food-icon-white.webp";
 import searchFoodIcon from "../../resources/images/magnifier-icon-white.webp";
 import addIcon from "../../resources/images/plus-white.webp";
-import ellipses from "../../resources/images/ellipses.webp";
+import ZoneManager from "../utils/ZoneManager";
+import {useSelector} from "react-redux";
 
 const Zones = () => {
+
+    const zoneList = useSelector((state) => state.zones.value);
+
     return (
         <div>
             <header className="dashboard-header">Zones</header>
@@ -18,15 +22,7 @@ const Zones = () => {
                     </button>
                 </LinkElement>
 
-                <article className="zone-item">
-                    <p className="zone-item-name">Left Cabinet</p>
-                    <img className="zone-item-options" src={ellipses} alt=""/>
-                </article>
-
-                <article className="zone-item">
-                    <p className="zone-item-name">Pantry - Top Shelf</p>
-                    <img className="zone-item-options" src={ellipses} alt=""/>
-                </article>
+              <ZoneManager zoneList={zoneList}/>
             </section>
 
             <footer className="site-footer">

@@ -1,15 +1,24 @@
 import React, {useState} from "react";
-import LinkElement from "../LinkElement";
+import LinkElement, {navigateTo} from "../utils/LinkElement";
 import dashboardIcon from "../../resources/images/dashboard-icon-white-active.webp";
 import zoneIcon from "../../resources/images/zone-icon-white-active.webp";
 import registerFoodIcon from "../../resources/images/food-icon-white.webp";
 import searchFoodIcon from "../../resources/images/magnifier-icon-white.webp";
 import {ChromePicker} from "react-color";
+import {useDispatch} from "react-redux";
+import {addZone} from "../redux/reducers/zone";
+import {v4 as uuid} from "uuid";
 
 const AddZone = () => {
 
     const [color, setColor] = useState({hex: "#ffffff"});
     const [zoneName, setZoneName] = useState("");
+    const dispatch = useDispatch();
+
+    const saveZone = () => {
+        dispatch(addZone({zoneID: uuid(), zoneName: zoneName, zoneColor: color.hex}));
+        // navigateTo("/dashboard/zones");
+    };
 
     return (
         <div>
@@ -32,9 +41,7 @@ const AddZone = () => {
                     <div className="preview-zone" style={{backgroundColor: color.hex}}>{zoneName}</div>
                 </article>
 
-                <LinkElement>
-                    <button className="save-zone-button">Save</button>
-                </LinkElement>
+                <button className="save-zone-button" onClick={() => saveZone()}>Save</button>
             </section>
 
 

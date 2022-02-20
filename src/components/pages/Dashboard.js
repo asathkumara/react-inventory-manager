@@ -4,7 +4,7 @@ import registerFoodIcon from "../../resources/images/food-icon-white.webp";
 import zoneIcon from "../../resources/images/zone-icon-white.webp";
 import shoppingCartIcon from "../../resources/images/shopping-cart-icon-white.webp";
 import dashboardIcon from "../../resources/images/dashboard-icon-white-active.webp";
-import LinkElement from "../LinkElement";
+import LinkElement from "../utils/LinkElement";
 
 const Dashboard = () => {
     return (

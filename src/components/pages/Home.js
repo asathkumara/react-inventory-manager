@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../../resources/images/kitchen-logo.webp";
-import LinkElement from "../LinkElement";
+import LinkElement from "../utils/LinkElement";
 
 const Home = () => {
     return (
