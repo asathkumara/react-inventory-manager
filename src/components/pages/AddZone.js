@@ -5,7 +5,7 @@ import zoneIcon from "../../resources/images/zone-icon-white-active.webp";
 import registerFoodIcon from "../../resources/images/food-icon-white.webp";
 import searchFoodIcon from "../../resources/images/magnifier-icon-white.webp";
 import {ChromePicker} from "react-color";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {addZone} from "../redux/reducers/zone";
 import {v4 as uuid} from "uuid";
 
@@ -14,10 +14,27 @@ const AddZone = () => {
     const [color, setColor] = useState({hex: "#ffffff"});
     const [zoneName, setZoneName] = useState("");
     const dispatch = useDispatch();
+    const zoneList = useSelector((state) => state.zones.value);
 
     const saveZone = () => {
+        let zonesWithDesiredColor = zoneList.filter((zone) => zone.zoneColor.toLowerCase() === color.hex.toLowerCase());
+        let hasZoneWithDesiredColor = zonesWithDesiredColor.length !== 0;
+        let hasEmptyZoneName = zoneName.length === 0;
+
+        if (hasEmptyZoneName)
+        {
+            alert("A zone must have a name. Please enter a zone name.");
+            return;
+        }
+
+        if(hasZoneWithDesiredColor)
+        {
+            alert(`A zone exists with the color ${color.hex}. Please pick a different color.`);
+            return;
+        }
+
         dispatch(addZone({zoneID: uuid(), zoneName: zoneName, zoneColor: color.hex}));
-        // navigateTo("/dashboard/zones");
+        navigateTo("/dashboard/zones");
     };
 
     return (
