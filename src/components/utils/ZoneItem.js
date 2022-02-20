@@ -2,6 +2,7 @@ import React, {useRef} from "react";
 import ellipses from "../../resources/images/ellipses.webp";
 import {removeZone} from "../redux/reducers/zone";
 import {useDispatch} from "react-redux";
+import {navigateTo} from "./LinkElement";
 
 const ZoneItem = ({zoneID, zoneName, zoneColor}) => {
 
@@ -34,8 +35,8 @@ const ZoneItem = ({zoneID, zoneName, zoneColor}) => {
                 />
 
                 <div className="zone-item-dropdown" ref={itemOptionsRef} onMouseLeave={()=>hideOptions()}>
-                    <a className="zone-item-dropdown-option">Edit</a>
-                    <a className="zone-item-dropdown-option" href="#" onClick={() => deleteZone()}>Remove</a>
+                    <p className="zone-item-dropdown-option" onClick={() => navigateTo(`/dashboard/zones/edit/${zoneID}`)}>Edit</p>
+                    <p className="zone-item-dropdown-option" onClick={() => deleteZone()}>Remove</p>
                 </div>
             </article>
         </>

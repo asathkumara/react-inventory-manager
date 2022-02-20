@@ -12,6 +12,16 @@ const removeZoneAction = (state, action) =>
     state.value = state.value.filter((zone) => zone.zoneID !== action.payload.zoneID);
 };
 
+const editZoneAction = (state, action) =>
+{
+    state.value.map((zone) => {
+        if (zone.zoneID === action.payload.zoneID)
+        {
+            zone.zoneName = action.payload.zoneName;
+            zone.zoneColor = action.payload.zoneColor;
+        }
+    });
+};
 
 const zoneSlice = createSlice({
     name: "zones",
@@ -23,9 +33,10 @@ const zoneSlice = createSlice({
     },
     reducers: {
         addZone: (state, action) => addZoneAction(state, action),
-        removeZone: (state, action) => removeZoneAction(state, action)
+        removeZone: (state, action) => removeZoneAction(state, action),
+        editZone: (state, action) => editZoneAction(state, action)
     }
 });
 
-export const { addZone, removeZone} = zoneSlice.actions;
+export const { addZone, removeZone, editZone} = zoneSlice.actions;
 export default zoneSlice.reducer;

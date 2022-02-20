@@ -7,6 +7,7 @@ import Zones from "./components/pages/Zones";
 import SearchFood from "./components/pages/SearchFood";
 import RegisterFood from "./components/pages/RegisterFood";
 import AddZone from "./components/pages/AddZone";
+import EditZone from "./components/pages/EditZone";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="/dashboard/zones" element={<Zones/>}/>
             <Route path="/dashboard/zones/add" element={<AddZone/>}/>
+            <Route path="/dashboard/zones/edit/:zoneID" element={<EditZone/>}/>
         <Route path="/dashboard/register" element={<RegisterFood/>}/>
         <Route path="/dashboard/search" element={<SearchFood/>}/>
       </Routes>
