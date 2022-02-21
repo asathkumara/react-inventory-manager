@@ -10,7 +10,10 @@ const ZoneManager = () => {
         <div>
             {console.table(zoneList)}
             {zoneList.map((zone) => {
-                return <ZoneItem key={zone.zoneID} zoneID={zone.zoneID} zoneName={zone.zoneName} zoneColor={zone.zoneColor}/>
+                if(zone.zoneName !== "Unassigned")
+                {
+                    return <ZoneItem key={zone.zoneID} zoneID={zone.zoneID} zoneName={zone.zoneName} zoneColor={zone.zoneColor}/>
+                }
             })}
         </div>
     )

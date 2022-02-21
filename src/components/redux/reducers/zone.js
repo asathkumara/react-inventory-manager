@@ -7,6 +7,16 @@ const addZoneAction = (state, action) =>
     state.value.push(action.payload);
 };
 
+const addZoneItemAction = (state, action) =>
+{
+    state.value.map((zone) => {
+        if (zone.zoneID === action.payload.zoneID)
+        {
+            zone.zoneItems = [...action.payload.zoneItems];
+        }
+    });
+};
+
 const removeZoneAction = (state, action) =>
 {
     state.value = state.value.filter((zone) => zone.zoneID !== action.payload.zoneID);
@@ -27,8 +37,9 @@ const zoneSlice = createSlice({
     name: "zones",
     initialState: {
         value: [
-            {zoneID: uuid(), zoneName: "Left Cabinet", zoneColor: "#FFFFFF"},
-            {zoneID: uuid(), zoneName: "Pantry - Top Shelf", zoneColor: "#F2F2F2"}
+            {zoneID: uuid(), zoneName: "Left Cabinet", zoneColor: "#FFFFFF", zoneItems: []},
+            {zoneID: uuid(), zoneName: "Pantry - Top Shelf", zoneColor: "#F2F2F2", zoneItems: []},
+            {zoneID: uuid(), zoneName: "Unassigned", zoneColor: "#a8a1a1", zoneItems: []},
         ]
     },
     reducers: {

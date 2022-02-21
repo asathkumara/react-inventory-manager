@@ -33,14 +33,14 @@ const AddZone = () => {
             return;
         }
 
-        dispatch(addZone({zoneID: uuid(), zoneName: zoneName, zoneColor: color.hex}));
+        dispatch(addZone({zoneID: uuid(), zoneName: zoneName, zoneColor: color.hex, zoneItems: []}));
         navigateTo("/dashboard/zones");
     };
 
     return (
         <div>
             <header className="dashboard-header">Add Zone</header>
-            <section className="zone-menu">
+            <section className="food-menu">
                 <article className="zone-name">
                     <input className="zone-name-input"
                            placeholder="Enter Zone Name"
