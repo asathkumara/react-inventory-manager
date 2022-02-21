@@ -1,16 +1,7 @@
 .zone-name-input
 {
-    width: 100%;
-    height: 123px;
-    border: none;
-    background-color: var(--color-light-grey-2);
-
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: var(--font-raleway);
+   background-color: var(--color-light-grey-2);
 }
-
 
 .option
 {

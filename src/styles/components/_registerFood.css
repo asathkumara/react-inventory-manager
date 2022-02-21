@@ -9,52 +9,22 @@
 
 .food-name-input
 {
-    width: 100%;
-    height: 120px;
-    border: none;
     background-color: var(--color-light-grey-2);
-
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: var(--font-raleway);
 }
 
 .barcode-input
 {
-    width: 100%;
-    height: 123px;
-    border: none;
 
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: var(--font-raleway);
 }
 
 .food-units-input
 {
-    width: 100%;
-    height: 123px;
-    border: none;
 
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: var(--font-raleway)
 }
 
 .restock-input
 {
-    opacity: 1;
-    width: 100%;
-    height: 123px;
-    border: none;
 
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: var(--font-raleway)
 }
 
 .save-food-button

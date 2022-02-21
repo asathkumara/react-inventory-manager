@@ -1,0 +1,9 @@
+input[type="text"],
+input[type="number"],
+select
+{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: var(--font-raleway);
+}
