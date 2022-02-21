@@ -1,0 +1,42 @@
+.error
+{
+    margin: auto;
+    text-align: center;
+}
+
+.error-image
+{
+    margin: auto;
+    width: 100%;
+}
+.error-header
+{
+    font-size: 40px;
+    margin: 10px;
+}
+
+.error-message
+{
+    font-size: 25px;
+    margin: 10px;
+}
+
+.error-button
+{
+    background-color: var(--color-black);
+    color: var(--text-color-2);
+
+    width:130px;
+    height: 57px;
+
+    font-size: 20px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 25px;
+}
+
+.error-button:hover
+{
+    cursor: pointer;
+    transform: scale(1.2);
+}

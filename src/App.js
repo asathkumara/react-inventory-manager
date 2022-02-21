@@ -9,6 +9,7 @@ import RegisterFood from "./components/pages/RegisterFood";
 import AddZone from "./components/pages/AddZone";
 import EditZone from "./components/pages/EditZone";
 import ManageFood from "./components/pages/ManageFood";
+import Error from "./components/pages/Error";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/dashboard/food/register" element={<RegisterFood/>}/>
         <Route path="/dashboard/food/manage/:foodID" element={<ManageFood/>}/>
         <Route path="/dashboard/search" element={<SearchFood/>}/>
+        <Route path="*" element={<Error/>}/>
       </Routes>
     </div>
   );

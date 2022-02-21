@@ -40,7 +40,7 @@ const Dashboard = () => {
                 </article>
 
                 <article className="dashboard-item">
-                    <LinkElement link="/dashboard/search">
+                    <LinkElement link="/dashboard/groceries">
                         <figure className="dashboard-item-icon">
                             <img className="dashboard-item-image" src={shoppingCartIcon} alt=""/>
                             <figcaption className={"dashboard-item-description"}>Groceries</figcaption>
