@@ -1,12 +1,10 @@
 import React, {useState} from "react";
-import LinkElement, {navigateTo} from "../utils/LinkElement";
-import dashboardIcon from "../../resources/images/dashboard-icon-white-active.webp";
-import zoneIcon from "../../resources/images/zone-icon-white.webp";
+import {navigateTo} from "../utils/LinkElement";
 import registerFoodIcon from "../../resources/images/food-icon-white-active.webp";
-import searchFoodIcon from "../../resources/images/magnifier-icon-white.webp";
 import {useDispatch, useSelector} from "react-redux";
 import {v4 as uuid} from "uuid";
 import {addFood} from "../redux/reducers/food";
+import Footer from "../utils/Footer";
 
 const RegisterFood = () => {
 
@@ -42,8 +40,7 @@ const RegisterFood = () => {
             return;
         }
 
-        console.log({foodID: uuid(), foodName: foodName, barcodeNumber: barcodeNumber, restockLevel: restockLevel});
-        dispatch(addFood({foodID: uuid(), foodName: foodName, barcodeNumber: barcodeNumber, restockLevel: restockLevel}));
+        dispatch(addFood({foodID: uuid(), foodName: foodName, barcodeNumber: barcodeNumber, foodUnits: foodUnits, restockLevel: restockLevel}));
         navigateTo("/dashboard");
     };
 
@@ -90,20 +87,7 @@ const RegisterFood = () => {
 
                 <button className="save-food-button" onClick={() => saveFood()}>Save</button>
             </section>
-            <footer className="site-footer">
-                <LinkElement link="/dashboard">
-                    <img className="site-footer-links" src={dashboardIcon} alt=""/>
-                </LinkElement>
-                <LinkElement link="/dashboard/zones">
-                    <img className="site-footer-links" src={zoneIcon} alt=""/>
-                </LinkElement>
-                <LinkElement link="/dashboard/register">
-                    <img className="site-footer-links" src={registerFoodIcon} alt=""/>
-                </LinkElement>
-                <LinkElement link="/dashboard/search">
-                    <img className="site-footer-links" src={searchFoodIcon} alt=""/>
-                </LinkElement>
-            </footer>
+            <Footer registerFoodIcon={registerFoodIcon}/>
         </div>
     );
 };

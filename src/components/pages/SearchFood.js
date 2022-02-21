@@ -1,29 +1,56 @@
-import React from "react";
-import LinkElement from "../utils/LinkElement";
-import dashboardIcon from "../../resources/images/dashboard-icon-white-active.webp";
-import zoneIcon from "../../resources/images/zone-icon-white.webp";
-import registerFoodIcon from "../../resources/images/food-icon-white.webp";
+import React, {useState} from "react";
 import searchFoodIcon from "../../resources/images/magnifier-icon-white-active.webp";
+import magnifierIcon from "../../resources/images/magnifier-icon.webp";
+import {useSelector} from "react-redux";
+import FoodManager from "../utils/FoodManager";
+import Footer from "../utils/Footer";
+
 
 const SearchFood = () => {
+
+    const [query, setQuery] = useState("");
+    const [queryResults, setQueryResults] = useState("");
+    const [queryFoodList, setQueryFoodList] = useState([]);
+
+    const foodList = useSelector((state) => state.food.value);
+
+    const searchFoodItems = () => {
+        if (query.length === 0)
+        {
+            setQueryFoodList([]);
+            setQueryResults("");
+            return;
+        }
+
+       let filteredFoodList = foodList.filter((food) => food.foodName.toLowerCase().includes(query.toLowerCase()));
+
+       setQueryResults(`About ${filteredFoodList.length} results found.`);
+       setQueryFoodList(filteredFoodList);
+    };
+
     return (
         <div>
-            <h2>Hello from SearchFood</h2>
+            <header className="dashboard-header">Search</header>
+            <section className="zone-menu">
+                <article className="food-search">
+                    <span className="food-search-icon">
+                        <img src={magnifierIcon} alt="search"/>
+                    </span>
+                    <input className="food-search-input"
+                           placeholder="Search Food Item"
+                           type="text"
+                           onChange={(event) => setQuery(event.target.value)}
+                           onKeyUp={() => searchFoodItems()}
+                    />
+                </article>
 
-            <footer className="site-footer">
-                <LinkElement link="/dashboard">
-                    <img className="site-footer-links" src={dashboardIcon} alt=""/>
-                </LinkElement>
-                <LinkElement link="/dashboard/zones">
-                    <img className="site-footer-links" src={zoneIcon} alt=""/>
-                </LinkElement>
-                <LinkElement link="/dashboard/register">
-                    <img className="site-footer-links" src={registerFoodIcon} alt=""/>
-                </LinkElement>
-                <LinkElement link="/dashboard/search">
-                    <img className="site-footer-links" src={searchFoodIcon} alt=""/>
-                </LinkElement>
-            </footer>
+                <article className="option food-search-results">
+                    <h2 className="option-label">Results</h2>
+                    <p>{queryResults}</p>
+                    <FoodManager foodList={queryFoodList}/>
+                </article>
+            </section>
+            <Footer searchFoodIcon={searchFoodIcon}/>
         </div>
     );
 };

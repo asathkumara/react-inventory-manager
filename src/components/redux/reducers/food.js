@@ -12,9 +12,9 @@ const foodSlice = createSlice({
     name: "food",
     initialState: {
         value: [
-            {foodID: uuid(), foodName: "White Rice", barcodeNumber: "2EA151", restockLevel: 1},
-            {foodID: uuid(), foodName: "Brown Rice", barcodeNumber: "2EA152", restockLevel: 1},
-            {foodID: uuid(), foodName: "Thrice Washed Lettuce", barcodeNumber: "2EA153", restockLevel: 1}
+            {foodID: uuid(), foodName: "White Rice", barcodeNumber: "2EA151", foodUnits: "grams", restockLevel: 1},
+            {foodID: uuid(), foodName: "Brown Rice", barcodeNumber: "2EA152", foodUnits: "grams", restockLevel: 1},
+            {foodID: uuid(), foodName: "Thrice Washed Lettuce", barcodeNumber: "2EA153", foodUnits: "grams", restockLevel: 1}
         ]
     },
     reducers: {

@@ -1,13 +1,11 @@
 import React, {useState} from "react";
-import LinkElement, {navigateTo} from "../utils/LinkElement";
-import dashboardIcon from "../../resources/images/dashboard-icon-white-active.webp";
+import {navigateTo} from "../utils/LinkElement";
 import zoneIcon from "../../resources/images/zone-icon-white-active.webp";
-import registerFoodIcon from "../../resources/images/food-icon-white.webp";
-import searchFoodIcon from "../../resources/images/magnifier-icon-white.webp";
 import {ChromePicker} from "react-color";
 import {useDispatch, useSelector} from "react-redux";
 import {editZone} from "../redux/reducers/zone";
 import {useParams} from "react-router-dom";
+import Footer from "../utils/Footer";
 
 const EditZone = () => {
     const dispatch = useDispatch();
@@ -65,20 +63,7 @@ const EditZone = () => {
             </section>
 
 
-            <footer className="site-footer">
-                <LinkElement link="/dashboard">
-                    <img className="site-footer-links" src={dashboardIcon} alt=""/>
-                </LinkElement>
-                <LinkElement link="/dashboard/zones">
-                    <img className="site-footer-links" src={zoneIcon} alt=""/>
-                </LinkElement>
-                <LinkElement link="/dashboard/register">
-                    <img className="site-footer-links" src={registerFoodIcon} alt=""/>
-                </LinkElement>
-                <LinkElement link="/dashboard/search">
-                    <img className="site-footer-links" src={searchFoodIcon} alt=""/>
-                </LinkElement>
-            </footer>
+            <Footer zoneIcon={zoneIcon}/>
         </div>
     );
 };

@@ -18,7 +18,8 @@ const App = () => {
         <Route path="/dashboard/zones" element={<Zones/>}/>
             <Route path="/dashboard/zones/add" element={<AddZone/>}/>
             <Route path="/dashboard/zones/edit/:zoneID" element={<EditZone/>}/>
-        <Route path="/dashboard/register" element={<RegisterFood/>}/>
+        <Route path="/dashboard/food/register" element={<RegisterFood/>}/>
+        <Route path="/dashboard/food/manage/:foodID" element={<RegisterFood/>}/>
         <Route path="/dashboard/search" element={<SearchFood/>}/>
       </Routes>
     </div>
