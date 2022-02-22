@@ -1,20 +1,24 @@
 import React, {useState} from "react";
-import {navigateTo} from "../utils/LinkElement";
 import registerFoodIcon from "../../resources/images/food-icon-white-active.webp";
 import {useDispatch, useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
 import Footer from "../utils/Footer";
+import ZoneManager from "../utils/ZoneManager";
+import {editZoneItems} from "../redux/reducers/zone";
 
 const ManageFood = () => {
+
+
     const dispatch = useDispatch();
     const {foodID} = useParams();
     const foodList = useSelector((state) => state.food.value);
     const foodToBeManaged = foodList.filter((food) => food.foodID === foodID)[0];
 
 
-    const saveZoneChanges = () => {
-        dispatch();
-        navigateTo("/dashboard/search");
+    const saveZoneItems = (zoneID, quantity) => {
+        // debugger;
+        dispatch(editZoneItems({zoneID: zoneID, foodID: foodID, quantity: quantity}));
+        // navigateTo("/dashboard/search");
     };
 
     return (
@@ -29,7 +33,10 @@ const ManageFood = () => {
                     />
                 </article>
 
-
+                <ZoneManager
+                    showQuantities={true}
+                    saveQuantities={saveZoneItems}
+                />
                 <button className="save-zone-button">Save</button>
             </section>
 

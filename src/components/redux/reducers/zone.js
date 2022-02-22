@@ -33,6 +33,25 @@ const editZoneAction = (state, action) =>
     });
 };
 
+const editZoneItemsAction = (state, action) =>
+{
+    state.value.map((zone) => {
+        if (zone.zoneID === action.payload.zoneID)
+        {
+            let filteredZoneItems = zone.zoneItems.filter((zoneItem) => zoneItem.foodID === action.payload.foodID);
+
+            if (filteredZoneItems.length !== 0)
+            {
+                filteredZoneItems[0].quantity = action.payload.quantity;
+            }
+            else
+            {
+                zone.zoneItems.push({foodID: action.payload.foodID, quantity: action.payload.quantity});
+            }
+        }
+    });
+};
+
 const zoneSlice = createSlice({
     name: "zones",
     initialState: {
@@ -45,9 +64,10 @@ const zoneSlice = createSlice({
     reducers: {
         addZone: (state, action) => addZoneAction(state, action),
         removeZone: (state, action) => removeZoneAction(state, action),
-        editZone: (state, action) => editZoneAction(state, action)
+        editZone: (state, action) => editZoneAction(state, action),
+        editZoneItems: (state, action) => editZoneItemsAction(state, action)
     }
 });
 
-export const { addZone, removeZone, editZone} = zoneSlice.actions;
+export const { addZone, removeZone, editZone, editZoneItems} = zoneSlice.actions;
 export default zoneSlice.reducer;

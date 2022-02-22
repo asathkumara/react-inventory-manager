@@ -4,7 +4,7 @@ import {removeZone} from "../redux/reducers/zone";
 import {useDispatch} from "react-redux";
 import {navigateTo} from "./LinkElement";
 
-const ZoneItem = ({zoneID, zoneName, zoneColor}) => {
+const ZoneItem = ({zoneID, zoneName, zoneColor, zoneItems, showQuantity=false, saveQuantities}) => {
 
     const itemOptionsRef = useRef();
     const dispatch = useDispatch();
@@ -19,9 +19,28 @@ const ZoneItem = ({zoneID, zoneName, zoneColor}) => {
     }
 
     const deleteZone = () => {
-        dispatch(removeZone({zoneID: zoneID}));
+        let deleteZone = window.confirm("Are you sure you want to delete this zone, and its contents?");
+
+        if (deleteZone)
+        {
+            dispatch(removeZone({zoneID: zoneID}));
+        }
     }
 
+    const renderQuantity = () => {
+        if (showQuantity)
+        {
+
+            return <input className="restock-input"
+                          style={{backgroundColor: zoneColor}}
+                          placeholder="1.0"
+                          type="number"
+                          min={0}
+                          max={9999}
+                          onKeyUp={(event) => saveQuantities(zoneID, event.target.value)}
+            />
+        }
+    }
     return (
         <>
             <article className="zone-item" style={{backgroundColor: zoneColor}}>
@@ -38,6 +57,9 @@ const ZoneItem = ({zoneID, zoneName, zoneColor}) => {
                     <p className="zone-item-dropdown-option" onClick={() => navigateTo(`/dashboard/zones/edit/${zoneID}`)}>Edit</p>
                     <p className="zone-item-dropdown-option" onClick={() => deleteZone()}>Remove</p>
                 </div>
+
+                {renderQuantity()}
+
             </article>
         </>
     )

@@ -4,13 +4,6 @@ import FoodItem from "./FoodItem";
 
 const FoodManager = ({foodList}) => {
 
-    // const [foodList, setFoodList] = useState(useSelector((state) => state.food.value));
-    //
-    // if (filterFor !== undefined)
-    // {
-    //     setFoodList(foodList.filter((food) => food.foodName === filterFor));
-    // }
-
     return (
         <div>
             {console.table(foodList)}

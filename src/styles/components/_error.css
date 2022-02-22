@@ -33,6 +33,8 @@
     text-transform: uppercase;
     border: none;
     border-radius: 25px;
+
+    margin: 20px;
 }
 
 .error-button:hover

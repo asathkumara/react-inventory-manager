@@ -17,7 +17,7 @@ const Error = () => {
                 <article className="error">
                     <img className="error-image" src={gordon404} alt="gordon-yelling"/>
                     <h1 className="error-header">404</h1>
-                    <p className="error-message">The page you're looking for could not be found.</p>
+                    <p className="error-message">This page is raw!</p>
                     <button className="error-button" onClick={() => navigateToPreviousPage()}>Go Back</button>
                 </article>
             </section>
