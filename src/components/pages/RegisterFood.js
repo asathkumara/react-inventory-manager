@@ -6,6 +6,10 @@ import {v4 as uuid} from "uuid";
 import {addFood} from "../redux/reducers/food";
 import Footer from "../utils/Footer";
 
+/**
+ * Container for RegisterFood page
+ * @returns {JSX.Element}
+ */
 const RegisterFood = () => {
 
     const [foodName, setFoodName] = useState("");

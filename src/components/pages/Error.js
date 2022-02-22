@@ -3,6 +3,10 @@ import dashboardIcon from "../../resources/images/dashboard-icon-white-active.we
 import React from "react";
 import gordon404 from "../../resources/images/gordon-404.webp";
 
+/**
+ * Container for Error page
+ * @returns {JSX.Element}
+ */
 const Error = () => {
 
     const navigateToPreviousPage = () =>

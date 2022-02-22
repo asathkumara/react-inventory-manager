@@ -5,7 +5,10 @@ import {useSelector} from "react-redux";
 import FoodManager from "../utils/FoodManager";
 import Footer from "../utils/Footer";
 
-
+/**
+ * Container for SearchFood page
+ * @returns {JSX.Element}
+ */
 const SearchFood = () => {
 
     const [query, setQuery] = useState("");

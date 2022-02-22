@@ -2,6 +2,10 @@ import React from "react";
 import Logo from "../../resources/images/kitchen-logo.webp";
 import LinkElement from "../utils/LinkElement";
 
+/**
+ * Container for Home page
+ * @returns {JSX.Element}
+ */
 const Home = () => {
     return (
         <div className="Home">

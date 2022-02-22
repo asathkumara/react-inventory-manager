@@ -4,6 +4,16 @@ import {removeZone} from "../redux/reducers/zone";
 import {useDispatch} from "react-redux";
 import {navigateTo} from "./LinkElement";
 
+/**
+ * Container for ZoneItem
+ * @param zoneID The id of the given zone
+ * @param zoneName The name of the given zone
+ * @param zoneColor The color of the given zone
+ * @param zoneItems The items of the given zone
+ * @param showQuantity Display quantities under the zone item
+ * @param saveQuantities Callback function to dispatch changes to the redux store
+ * @returns {JSX.Element}
+ */
 const ZoneItem = ({zoneID, zoneName, zoneColor, zoneItems, showQuantity=false, saveQuantities}) => {
 
     const itemOptionsRef = useRef();

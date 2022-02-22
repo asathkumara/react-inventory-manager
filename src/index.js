@@ -9,6 +9,9 @@ import store from "./components/redux/store";
 import persistStore from "redux-persist/es/persistStore";
 import {PersistGate} from "redux-persist/integration/react";
 
+/**
+ * Enables redux store persistance.
+ */
 const persistor = persistStore(store);
 
 ReactDOM.render(

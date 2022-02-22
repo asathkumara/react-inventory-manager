@@ -2,6 +2,15 @@ import React, {useRef} from "react";
 import ellipses from "../../resources/images/ellipses.webp";
 import {navigateTo} from "./LinkElement";
 
+/**
+ * Container for food items
+ * @param foodID The id of the given food item
+ * @param foodName The name of the given food item
+ * @param barcodeNumber The barcode number of the given food item
+ * @param foodUnits The units of the given food item
+ * @param restockLevel The restock level for the given food item
+ * @returns {JSX.Element}
+ */
 const FoodItem = ({ foodID, foodName, barcodeNumber, foodUnits, restockLevel }) => {
 
     const itemOptionsRef = useRef();

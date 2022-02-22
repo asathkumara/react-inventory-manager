@@ -7,6 +7,10 @@ import {addZone} from "../redux/reducers/zone";
 import {v4 as uuid} from "uuid";
 import Footer from "../utils/Footer";
 
+/**
+ * Container for AddZone page
+ * @returns {JSX.Element}
+ */
 const AddZone = () => {
 
     const [color, setColor] = useState({hex: "#ffffff"});

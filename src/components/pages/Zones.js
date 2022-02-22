@@ -5,6 +5,10 @@ import addIcon from "../../resources/images/plus-white.webp";
 import ZoneManager from "../utils/ZoneManager";
 import Footer from "../utils/Footer";
 
+/**
+ * Container for Zones page
+ * @returns {JSX.Element}
+ */
 const Zones = () => {
 
 

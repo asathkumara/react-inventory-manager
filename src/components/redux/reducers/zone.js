@@ -2,26 +2,31 @@ import { v4 as uuid } from 'uuid';
 
 const {createSlice} = require("@reduxjs/toolkit");
 
+/**
+ * Action for adding zones
+ * @param state The state of the store
+ * @param action The action to be dispatched
+ */
 const addZoneAction = (state, action) =>
 {
     state.value.push(action.payload);
 };
 
-const addZoneItemAction = (state, action) =>
-{
-    state.value.map((zone) => {
-        if (zone.zoneID === action.payload.zoneID)
-        {
-            zone.zoneItems = [...action.payload.zoneItems];
-        }
-    });
-};
-
+/**
+ * Action for removing zones
+ * @param state The state of the store
+ * @param action The action to be dispatched
+ */
 const removeZoneAction = (state, action) =>
 {
     state.value = state.value.filter((zone) => zone.zoneID !== action.payload.zoneID);
 };
 
+/**
+ * Action for editing zones
+ * @param state The state of the store
+ * @param action The action to be dispatched
+ */
 const editZoneAction = (state, action) =>
 {
     state.value.map((zone) => {
@@ -33,6 +38,12 @@ const editZoneAction = (state, action) =>
     });
 };
 
+/**
+ * Action for editing zone items
+ * @param state The state of the store
+ * @param action The action to be dispatched
+ * @remark: If the zone item does not exist, it will be created. Otherwise, it'll just be modified.
+ */
 const editZoneItemsAction = (state, action) =>
 {
     state.value.map((zone) => {
@@ -52,6 +63,11 @@ const editZoneItemsAction = (state, action) =>
     });
 };
 
+/**
+ * Reducer for zone
+ *
+ * @remark: Unique ids are generated using the uuid package.
+ */
 const zoneSlice = createSlice({
     name: "zones",
     initialState: {

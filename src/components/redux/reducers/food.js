@@ -2,12 +2,21 @@ import { v4 as uuid } from 'uuid';
 
 const {createSlice} = require("@reduxjs/toolkit");
 
+/**
+ * Action for adding food
+ * @param state The state of the store
+ * @param action The action to be dispatched
+ */
 const addFoodAction = (state, action) =>
 {
-    console.log("Addfoodaction called", action.payload);
     state.value.push(action.payload);
 };
 
+/**
+ * Reducer for food
+ *
+ * @remark: Unique ids are generated using the uuid package.
+ */
 const foodSlice = createSlice({
     name: "food",
     initialState: {

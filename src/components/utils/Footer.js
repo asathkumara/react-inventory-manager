@@ -5,6 +5,16 @@ import _registerFoodIcon from "../../resources/images/food-icon-white.webp";
 import _searchFoodIcon from "../../resources/images/magnifier-icon-white.webp";
 import React from "react";
 
+/**
+ * Container for Footer
+ * @param dashboardIcon The dashboard icon
+ * @param zoneIcon The zone icon
+ * @param registerFoodIcon The register food icon
+ * @param searchFoodIcon The search food icon
+ * @returns {JSX.Element}
+ * @remarks The icons were parameterized due to two versions of the image being available.
+ *          One version when it's inactive, and another when it is active.
+ */
 const Footer = ({dashboardIcon=_dashboardIcon, zoneIcon=_zoneIcon, registerFoodIcon=_registerFoodIcon, searchFoodIcon=_searchFoodIcon}) => {
     return (
         <footer className="site-footer">

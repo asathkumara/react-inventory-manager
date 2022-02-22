@@ -16,7 +16,10 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, reducers);
 
-
+/**
+ * Redux store for React application
+ * @type {EnhancedStore<any, AnyAction, [ThunkMiddlewareFor<any>]>}
+ */
 const store = configureStore({
     reducer: persistedReducer
 });

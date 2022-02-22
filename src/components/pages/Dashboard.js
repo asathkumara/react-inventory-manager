@@ -7,6 +7,10 @@ import dashboardIcon from "../../resources/images/dashboard-icon-white-active.we
 import LinkElement from "../utils/LinkElement";
 import Footer from "../utils/Footer";
 
+/**
+ * Container for Dashboard page
+ * @returns {JSX.Element}
+ */
 const Dashboard = () => {
     return (
         <div className="Dashboard">

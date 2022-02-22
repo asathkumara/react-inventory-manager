@@ -7,6 +7,10 @@ import {editZone} from "../redux/reducers/zone";
 import {useParams} from "react-router-dom";
 import Footer from "../utils/Footer";
 
+/**
+ * Container for EditZone page
+ * @returns {JSX.Element}
+ */
 const EditZone = () => {
     const dispatch = useDispatch();
     const {zoneID} = useParams();
