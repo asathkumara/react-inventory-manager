@@ -34,6 +34,7 @@ const ZoneItem = ({zoneID, zoneName, zoneColor, zoneItems, showQuantity=false, s
         if (deleteZone)
         {
             dispatch(removeZone({zoneID: zoneID}));
+            navigateTo("/dashboard/zones");
         }
     }
 
