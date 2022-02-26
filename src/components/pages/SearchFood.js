@@ -17,18 +17,23 @@ const SearchFood = () => {
 
     const foodList = useSelector((state) => state.food.value);
 
-    const searchFoodItems = () => {
-        if (query.length === 0)
-        {
-            setQueryFoodList([]);
-            setQueryResults("");
-            return;
-        }
+    const searchFoodItems = (delay=200) => {
+        setTimeout(() => {
+            if (query.length === 0)
+            {
+                setQueryFoodList([]);
+                setQueryResults("");
+                return;
+            }
 
-       let filteredFoodList = foodList.filter((food) => food.foodName.toLowerCase().includes(query.toLowerCase()));
+            let filteredFoodList = foodList.filter((food) => food.foodName.toLowerCase().includes(query.toLowerCase()) ||
+            food.barcodeNumber.toLowerCase().includes(query.toLowerCase()));
 
-       setQueryResults(`About ${filteredFoodList.length} results found.`);
-       setQueryFoodList(filteredFoodList);
+            setQueryResults(`About ${filteredFoodList.length} results found.`);
+            setQueryFoodList(filteredFoodList);
+
+        }, delay);
+
     };
 
     return (
