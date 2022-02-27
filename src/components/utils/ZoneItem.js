@@ -1,8 +1,9 @@
-import React, {useRef} from "react";
+import React, {useRef, useState} from "react";
 import ellipses from "../../resources/images/ellipses.webp";
 import {removeZone} from "../redux/reducers/zone";
 import {useDispatch} from "react-redux";
 import {navigateTo} from "./LinkElement";
+import {useParams} from "react-router-dom";
 
 /**
  * Container for ZoneItem
@@ -18,10 +19,15 @@ const ZoneItem = ({zoneID, zoneName, zoneColor, zoneItems, showQuantity=false, s
 
     const itemOptionsRef = useRef();
     const dispatch = useDispatch();
+    const {foodID} = useParams();
 
     const displayOptions = () => {
-        itemOptionsRef.current.style.display = "inline-flex";
-        itemOptionsRef.current.style.flexDirection = "column";
+
+        if (zoneName !== "Unassigned")
+        {
+            itemOptionsRef.current.style.display = "inline-flex";
+            itemOptionsRef.current.style.flexDirection = "column";
+        }
     };
 
     const hideOptions = () => {
@@ -34,17 +40,24 @@ const ZoneItem = ({zoneID, zoneName, zoneColor, zoneItems, showQuantity=false, s
         if (deleteZone)
         {
             dispatch(removeZone({zoneID: zoneID}));
-            navigateTo("/dashboard/zones");
+            window.location.reload();
         }
     }
 
     const renderQuantity = () => {
         if (showQuantity)
         {
+            let quantityValue = 0;
+
+            if (zoneItems.length !== 0)
+            {
+                let zoneItemsContainingFood = zoneItems.filter((zoneItem) => zoneItem.foodID == foodID);
+                quantityValue = zoneItemsContainingFood[0].quantity;
+            }
 
             return <input className="restock-input"
                           style={{backgroundColor: zoneColor}}
-                          placeholder="1.0"
+                          placeholder={quantityValue}
                           type="number"
                           min={0}
                           max={9999}

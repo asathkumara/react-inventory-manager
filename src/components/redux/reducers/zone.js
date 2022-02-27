@@ -13,12 +13,39 @@ const addZoneAction = (state, action) =>
 };
 
 /**
+ * Discards all the zone items from the given zone
+ * @param state
+ * @param zoneToBeRemoved
+ */
+const discardZoneItems = (state, zoneToBeRemoved) => {
+    state.value.map((zone) => {
+        if (zone.zoneName === "Unassigned")
+        {
+            debugger;
+            if (zone.zoneItems.length !== 0)
+            {
+                zone.zoneItems.forEach((zoneItem, index) => {
+                    zoneItem.quantity = Number(zoneItem.quantity) + Number(zoneToBeRemoved.zoneItems[index].quantity);
+                });
+            }
+            else
+            {
+                zoneToBeRemoved.zoneItems.forEach((zoneItem) => zone.zoneItems.push(zoneItem));
+            }
+        }
+    });
+}
+
+/**
  * Action for removing zones
  * @param state The state of the store
  * @param action The action to be dispatched
  */
 const removeZoneAction = (state, action) =>
 {
+    debugger;
+    let zoneToBeRemoved = state.value.filter((zone) => zone.zoneID == action.payload.zoneID)[0];
+    discardZoneItems(state, zoneToBeRemoved)
     state.value = state.value.filter((zone) => zone.zoneID !== action.payload.zoneID);
 };
 
@@ -49,11 +76,11 @@ const editZoneItemsAction = (state, action) =>
     state.value.map((zone) => {
         if (zone.zoneID === action.payload.zoneID)
         {
-            let filteredZoneItems = zone.zoneItems.filter((zoneItem) => zoneItem.foodID === action.payload.foodID);
+            let zonesContainingFood = zone.zoneItems.filter((zoneItem) => zoneItem.foodID === action.payload.foodID);
 
-            if (filteredZoneItems.length !== 0)
+            if (zonesContainingFood.length !== 0)
             {
-                filteredZoneItems[0].quantity = action.payload.quantity;
+                zonesContainingFood[0].quantity = action.payload.quantity;
             }
             else
             {

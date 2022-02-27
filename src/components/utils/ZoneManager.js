@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
 import ZoneItem from "./ZoneItem";
+import {useParams} from "react-router-dom";
 
 /**
  * Container for ZoneManager
@@ -11,7 +12,11 @@ import ZoneItem from "./ZoneItem";
 const ZoneManager = ({showQuantities=false, saveQuantities}) => {
 
     const [zoneList, setZoneList] = useState(useSelector((state) => state.zones.value));
+    const {foodID} = useParams();
 
+    /**
+     * Once the component is mounted onto the DOM, decide whether to show the unassigned zone.
+     */
     useEffect(() => {
         if(!showQuantities)
         {
@@ -20,10 +25,8 @@ const ZoneManager = ({showQuantities=false, saveQuantities}) => {
     }, [showQuantities])
 
     return (
-        <div>
-            {console.table(zoneList)}
+        <div className={"zone-list"}>
             {
-
                 zoneList.map((zone) => {
                     return <ZoneItem
                             key={zone.zoneID}
@@ -33,7 +36,6 @@ const ZoneManager = ({showQuantities=false, saveQuantities}) => {
                             zoneItems={zone.zoneItems}
                             showQuantity={showQuantities}
                             saveQuantities={saveQuantities}
-
                     />
                 })
             }
