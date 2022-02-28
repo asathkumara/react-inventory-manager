@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
 import ZoneItem from "./ZoneItem";
 import {useParams} from "react-router-dom";
+import zone from "../redux/reducers/zone";
 
 /**
  * Container for ZoneManager

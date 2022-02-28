@@ -11,11 +11,11 @@ const FoodManager = ({foodList}) => {
 
     return (
         <div>
-            {console.table(foodList)}
             {
                 foodList.map((food) => {
 
                     return <FoodItem
+                        key={food.foodID}
                         foodID={food.foodID}
                         foodName={food.foodName}
                         barcodeNumber={food.barcodeNumber}

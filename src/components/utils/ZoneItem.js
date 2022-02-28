@@ -48,11 +48,11 @@ const ZoneItem = ({zoneID, zoneName, zoneColor, zoneItems, showQuantity=false, s
         if (showQuantity)
         {
             let quantityValue = 0;
+            let zoneItemsContainingFood = zoneItems.filter((zoneItem) => zoneItem.foodID === foodID);
 
-            if (zoneItems.length !== 0)
+            if (zoneItemsContainingFood.length !== 0)
             {
-                let zoneItemsContainingFood = zoneItems.filter((zoneItem) => zoneItem.foodID == foodID);
-                quantityValue = zoneItemsContainingFood[0].quantity;
+                quantityValue = zoneItemsContainingFood[0].quantity ?? 0;
             }
 
             return <input className="restock-input"

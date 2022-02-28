@@ -21,10 +21,10 @@ const ManageFood = () => {
     const foodToBeManaged = foodList.filter((food) => food.foodID === foodID)[0];
 
 
-    const saveZoneItems = (zoneID, quantity) => {
-        // debugger;
-        dispatch(editZoneItems({zoneID: zoneID, foodID: foodID, quantity: quantity}));
-        // navigateTo("/dashboard/search");
+    const saveZoneItems = (zoneID, quantity, delay=200) => {
+        setTimeout(() => {
+            dispatch(editZoneItems({zoneID: zoneID, foodID: foodID, quantity: quantity}));
+        }, delay)
     };
 
     return (
@@ -43,7 +43,6 @@ const ManageFood = () => {
                     showQuantities={true}
                     saveQuantities={saveZoneItems}
                 />
-                <button className="save-zone-button">Save</button>
             </section>
 
 
