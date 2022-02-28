@@ -20,6 +20,11 @@ const EditZone = () => {
     const [color, setColor] = useState({hex: zoneToBeEdited.zoneColor});
     const [zoneName, setZoneName] = useState(zoneToBeEdited.zoneName);
 
+    /***
+     * Saves the zone
+     *
+     * @remark Errors are handled as alerts and confirms. Bad UX, but given the time constraints, it's simple.
+     */
     const saveZone = () => {
         let zonesWithDesiredColor = zoneList.filter((zone) => zone.zoneColor.toLowerCase() === color.hex.toLowerCase());
 

@@ -18,6 +18,11 @@ const AddZone = () => {
     const dispatch = useDispatch();
     const zoneList = useSelector((state) => state.zones.value);
 
+    /***
+     * Saves the zone
+     *
+     * @remark Errors are handled as alerts and confirms. Bad UX, but given the time constraints, it's simple.
+     */
     const saveZone = () => {
         let zonesWithDesiredColor = zoneList.filter((zone) => zone.zoneColor.toLowerCase() === color.hex.toLowerCase());
         let hasZoneWithDesiredColor = zonesWithDesiredColor.length !== 0;

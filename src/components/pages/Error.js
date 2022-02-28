@@ -8,7 +8,6 @@ import gordon404 from "../../resources/images/gordon-404.webp";
  * @returns {JSX.Element}
  */
 const Error = () => {
-
     const navigateToPreviousPage = () =>
     {
         window.history.back();

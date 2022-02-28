@@ -20,6 +20,11 @@ const RegisterFood = () => {
     const foodList = useSelector((state) => state.food.value);
     const dispatch = useDispatch();
 
+    /***
+     * Saves the food item
+     *
+     * @remark Errors are handled as alerts and confirms. Bad UX, but given the time constraints, it's simple.
+     */
     const saveFood = () => {
         let foodsWithSameBarcode = foodList.filter((food) => food.barcodeNumber === barcodeNumber);
         let hasFoodWithSameBarcode = foodsWithSameBarcode.length !== 0;

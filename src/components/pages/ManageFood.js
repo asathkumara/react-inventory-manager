@@ -21,6 +21,12 @@ const ManageFood = () => {
     const foodToBeManaged = foodList.filter((food) => food.foodID === foodID)[0];
 
 
+    /***
+     * Saves changes made to zone items
+     * @param zoneID The id of the given zone
+     * @param quantity The quantity of food in the given zone
+     * @param delay The delay at which the changes are to be saved. Defaults to 200ms.
+     */
     const saveZoneItems = (zoneID, quantity, delay=200) => {
         setTimeout(() => {
             dispatch(editZoneItems({zoneID: zoneID, foodID: foodID, quantity: quantity}));

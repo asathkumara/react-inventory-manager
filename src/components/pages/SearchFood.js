@@ -17,6 +17,10 @@ const SearchFood = () => {
 
     const foodList = useSelector((state) => state.food.value);
 
+    /***
+     * Searches for the given food item
+     * @param delay The delay at which the search is to be made. Defaults to 200ms.
+     */
     const searchFoodItems = (delay=200) => {
         setTimeout(() => {
             if (query.length === 0)
