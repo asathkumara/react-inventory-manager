@@ -1,8 +1,5 @@
-import LinkElement from "../utils/LinkElement";
-import addIcon from "../../resources/images/plus-white.webp";
-import ZoneManager from "../utils/ZoneManager";
 import Footer from "../utils/Footer";
-import registerFoodIcon from "../../resources/images/food-icon-white-active.webp";
+import shoppingCartIcon from "../../resources/images/shopping-cart-icon-white-active.webp";
 import React, {useEffect, useState} from "react";
 import FoodManager from "../utils/FoodManager";
 import {useSelector} from "react-redux";
@@ -50,7 +47,7 @@ const Groceries = () => {
                 <FoodManager foodList={foodList}/>
             </section>
 
-            <Footer zoneIcon={registerFoodIcon}/>
+            <Footer shoppingCartIcon={shoppingCartIcon}/>
         </div>
     );
 };

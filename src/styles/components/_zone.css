@@ -10,7 +10,7 @@
 .add-zone-button
 {
     background-color: var(--color-black);
-    border-radius: 50px;
+    border-radius: 50%;
 
     width: 51px;
     height: 44px;
