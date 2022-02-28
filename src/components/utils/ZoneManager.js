@@ -17,11 +17,22 @@ const ZoneManager = ({showQuantities=false, saveQuantities}) => {
 
     /**
      * Once the component is mounted onto the DOM, decide whether to show the unassigned zone.
+     *
+     * If the unassigned zone is shown, move it to the bottom of the list.
      */
     useEffect(() => {
         if(!showQuantities)
         {
             setZoneList(zoneList.filter((zone) => zone.zoneName !== "Unassigned"));
+        }
+        else
+        {
+            let unassignedZone = zoneList.filter((zone) => zone.zoneName === "Unassigned")[0];
+            let zoneListWithoutUnassigned = zoneList.filter((zone) => zone.zoneName !== "Unassigned");
+            zoneListWithoutUnassigned.push(unassignedZone);
+
+            let zoneListWithUnassignedAtBottom = [...zoneListWithoutUnassigned];
+            setZoneList(zoneListWithUnassignedAtBottom)
         }
     }, [showQuantities])
 
