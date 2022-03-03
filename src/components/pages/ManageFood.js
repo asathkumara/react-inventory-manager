@@ -9,8 +9,6 @@ import {editZoneItems} from "../redux/reducers/zone";
 /**
  * Container for ManageFood page
  * @returns {JSX.Element}
- *
- * @remarks TO-DO: Figure out how to persist quantities in the zone item child components.
  */
 const ManageFood = () => {
 

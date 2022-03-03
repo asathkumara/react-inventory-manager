@@ -12,8 +12,8 @@ const Home = () => {
             <img className="site-logo" src={Logo} alt="site-logo"/>
             <header className="site-title">Kitchen Inventory Manager</header>
 
-            <LinkElement link={"dashboard"}>
-                <button className={"get-started"}>Get Started</button>
+            <LinkElement link="dashboard">
+                <button className="get-started">Get Started</button>
             </LinkElement>
         </div>
     )

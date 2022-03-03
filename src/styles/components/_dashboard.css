@@ -7,16 +7,13 @@
 {
     font-size: var(--font-large);
     font-weight: bold;
-    margin: 20px;
+    margin: 1.25rem;
 }
 
 .dashboard-menu
 {
     border-style:solid none none;
     border-top: 16px solid var(--color-dark-grey);
-
-    /*padding: 20px;*/
-    /*margin: auto;*/
 
     min-height: 100vh;
     display: flex;
@@ -31,7 +28,7 @@
     border: 1px solid var(--text-color-2);
     width: 100%;
     max-height: 400px;
-    padding: 100px;
+    padding: 6.25rem;
 
 }
 

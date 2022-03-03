@@ -25,7 +25,7 @@ const Footer = ({dashboardIcon=_dashboardIcon, zoneIcon=_zoneIcon, registerFoodI
             <LinkElement link="/dashboard/zones">
                 <img className="site-footer-links" src={zoneIcon} alt="zone icon"/>
             </LinkElement>
-            <LinkElement link="/dashboard/food/register">
+            <LinkElement link="/dashboard/food">
                 <img className="site-footer-links" src={registerFoodIcon} alt="register food icon"/>
             </LinkElement>
             <LinkElement link="/dashboard/search">

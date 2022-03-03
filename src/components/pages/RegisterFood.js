@@ -50,7 +50,7 @@ const RegisterFood = () => {
         }
 
         dispatch(addFood({foodID: uuid(), foodName: foodName, barcodeNumber: barcodeNumber, foodUnits: foodUnits, restockLevel: restockLevel}));
-        navigateTo("/dashboard");
+        navigateTo("/dashboard/food");
     };
 
     return (

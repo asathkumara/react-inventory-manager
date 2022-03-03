@@ -5,7 +5,7 @@ import FoodManager from "../utils/FoodManager";
 import {useSelector} from "react-redux";
 
 /**
- * Container for Zones page
+ * Container for Groceries page
  * @returns {JSX.Element}
  */
 const Groceries = () => {
