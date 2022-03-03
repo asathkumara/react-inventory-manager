@@ -14,15 +14,63 @@
 .food-search-icon
 {
     position: absolute;
-    top: 30px;
-    right: 10px;
+    top: 2.5rem;
+    right: 1rem;
 
-    background-color: var(--color-light-grey-2);
+
     border: none;
 }
 
 .food-search-icon > img
 {
-    height: 60px;
-    width: 60px;
+    height: 45px;
+    width: 45px;
+}
+
+.food-search-results
+{
+    border-bottom: none;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px)
+{
+    .food-search-icon
+    {
+        position: absolute;
+        top: 2.3rem;
+        right: 1rem;
+
+        border: none;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px)
+{
+
+}
+
+/* iphones 6/7/8 and Plus in landscape */
+@media only screen and (max-width: 800px) and (orientation: landscape)
+{
+
+}
+
+/* iphones X in landscape */
+@media only screen and (max-width: 900px) and (orientation: landscape)
+{
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px)
+{
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px)
+{
+
 }

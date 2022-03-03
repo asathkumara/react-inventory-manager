@@ -12,21 +12,6 @@
     background-color: var(--color-light-grey-2);
 }
 
-.barcode-input
-{
-
-}
-
-.food-units-input
-{
-
-}
-
-.restock-input
-{
-
-}
-
 .save-food-button
 {
     background-color: var(--color-dark-red);
@@ -34,7 +19,7 @@
     width: 67px;
     height: 37px;
 
-    font-size: 15px;
+    font-size: var(--font-small);
     text-transform: uppercase;
     border: none;
     border-radius: 25px;
@@ -42,8 +27,8 @@
     transition: ease transform 0.2s;
 
     position: absolute;
-    top: 92%;
-    left: 95%;
+    bottom: 1rem;
+    right: 1rem;
 }
 
 .save-food-button:hover

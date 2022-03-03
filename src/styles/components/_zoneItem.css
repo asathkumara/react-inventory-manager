@@ -13,7 +13,7 @@
 
 .zone-item-name
 {
-    font-size: 30px;
+    font-size: var(--font-medium);
     text-transform: capitalize;
 }
 
