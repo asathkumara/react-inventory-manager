@@ -10,4 +10,4 @@ Your selections are persisted to your browser's local storage through the use of
 
 ## License
 
-This project is licensed under [MIT](https://github.com/asathkumara/react-inventory-manager/blob/master/LICENSE). Feel free to re-use any libaries and code but do your due diligence when attributing credit.
+This project is licensed under [MIT](https://github.com/asathkumara/react-inventory-manager/blob/master/LICENSE). Feel free to re-use any libaries and code for non-commercial use but do your due diligence when attributing credit.
