@@ -4,6 +4,8 @@
 
 This project is a kitchen inventory manager built in ReactJS. It allows you to store and group items by zone, and allows for quantity manager with restock options as well.
 
+Your selections are persisted to your browser's local storage through the use of Redux stores.
+
 ### Live demo available at https://react-inventory-manager.vercel.app/
 
 ## License
