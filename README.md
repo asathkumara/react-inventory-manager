@@ -58,7 +58,7 @@
 
 A crucial aspect of any business is inventory management. It determines your warehousing costs and impacts your ability to fulfill orders accurately and on time. Good inventory management is no simple task -- especially if you're doing it by hand. It takes time and a mistake could be costly. 
 
-The same can be said about our inventory at home -- or more specially, our kitchen. While the stakes are lower, good inventory management could save you money and a grocery run.
+The same can be said about our inventory at home -- or more specifically, our kitchen. While the stakes are lower, good inventory management could save you money and a grocery run.
 
 <table>
     <tr>
